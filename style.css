@@ -146,3 +146,13 @@ footer a{
 footer a:hover{
     color: #007BFF;
 }
+
+/* List */
+footer ul{
+    list-style: none;
+    padding: 0px;
+}
+
+footer ul li{
+    margin-bottom: 8px;
+}
