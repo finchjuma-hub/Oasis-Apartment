@@ -4,3 +4,28 @@ nav{
     padding: 16px 32px;
     box-shadow: 0 2px 6px #000;
 }
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:#000;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 4px;
+}
+
+nav ul li a:hover{
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+}
+
+nav ul li:last-child a{
+    font-style: italic;
+    color: #444;
+}
