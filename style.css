@@ -333,21 +333,4 @@ section img{
     background-image: url();
 }
 
-/* List */
-.facility-list{
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
 
-.facility-list li{
-    font-size: 16px;
-    margin-bottom: 8px;
-    line-height: 24px;
-}
-
-.facility-list li strong{
-    font-size: 18px;
-    color: #333;
-    margin-right: 6px;
-}
