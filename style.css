@@ -313,3 +313,11 @@ section h2{
     padding-bottom: 8px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+/* Section text */
+section p{
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
