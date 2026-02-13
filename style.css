@@ -460,55 +460,56 @@ section img{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    background-color: rgb(245, 243, 243);
+    min-height: 100vh;
+    margin-bottom: 0px;
 }
 
 .booking-card{
-    display: flex;
-    flex-direction: column;
     background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
+    border-radius: 12px;
     padding: 30px;
-    width: 500px;
-    height: 200px;
-    box-shadow: 0 4px 12px #000;
+    width: 380px;
+    box-shadow: 0 6px 18px #000;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .booking-card h2{
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
 
-.booking-form .form-group{
-    margin-bottom: 0px;
+.form-group{
+    margin-bottom: 18px;
     text-align: left;
 }
 
-.booking-form label{
+.form-group label{
     display: block;
-    margin-bottom: 0px;
+    margin-bottom: 6px;
     font-size: 14px;
     color: #333;
 }
-.booking-form input, .booking-form select{
+
+.form-group input, .form-group select{
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+
+.form-group input:focus, .form-group select:focus{
+    border-color: #007BFF;
+    outline: none;
 }
 
 .booking-form button{
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: black;
     color: white;
     border: none;
@@ -522,5 +523,19 @@ section img{
 
 .booking-form button:hover{
     background-color: gray;
+    transform: translateY(-2px);
+}
+
+.book-header{
+    display: flex;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-image: url();
+    margin-top: 0px;
 }
 
