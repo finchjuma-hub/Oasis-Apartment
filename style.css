@@ -303,3 +303,13 @@ section{
     box-shadow: 0px 4px 12px #000;
     align-items: center;
 }
+
+/* Section Headings */
+section h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    font-family: 'Times New Roman', Times, serif;
+}
