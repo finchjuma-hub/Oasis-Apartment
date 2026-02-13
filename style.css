@@ -113,3 +113,36 @@ header h2{
 #rooms .button:hover{
     background-color: gray;
 }
+
+/* Footer */
+footer{
+    background-color: gray;
+    color: white;
+    padding: 40px;
+    margin-top: 80px;
+}
+
+footer section{
+    flex: 1;
+    min-width: 240px;
+    margin: 20px;
+}
+
+footer h3{
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+}
+
+/* Footer links */
+footer a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover{
+    color: #007BFF;
+}
