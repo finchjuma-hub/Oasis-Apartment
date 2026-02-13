@@ -119,7 +119,10 @@ footer{
     background-color: gray;
     color: white;
     padding: 40px;
-    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 footer section{
@@ -132,7 +135,6 @@ footer h3{
     font-size: 20px;
     margin-bottom: 16px;
     font-weight: 600;
-    border-bottom: 2px solid white;
     padding-bottom: 8px;
 }
 
@@ -157,9 +159,15 @@ footer ul li{
     margin-bottom: 8px;
 }
 
+#contact-info p{
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
 /* Copyright */
 footer p{
     text-align: center;
+    width: 100%;
     margin-top: 40px;
     font-size: 14px;
     color: white;
