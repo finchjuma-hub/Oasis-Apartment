@@ -441,3 +441,16 @@ section img{
     border-radius: 8px;
 } 
 
+.rooms-header{
+    display: flex;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-image: url();
+    margin-top: 0px;
+}
+
