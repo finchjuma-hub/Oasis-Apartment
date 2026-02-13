@@ -27,15 +27,32 @@
       <!-- Content -->
     <main>
         <section class="book">
+            <div class="booking-card">
+                <h2>Check Availability</h2>
     <!-- Booking form section -->
              <form id="booking-form" action="booking.html" method="GET">
                 <!-- Check-in date -->
                  <label for="check-in">Check-in:</label>
                 <input type="date" id="check-in" name="check-in" required>
-
-                <!-- Check-out date -->
-                 <label for="check-out">Check-out:</label>
+             </div> 
+             
+             <!-- Check-out date -->             
+             <div class="form-group">
+                <label for="check-out">Check-out:</label>
                 <input type="date" id="check-out" name="check-out" required>
+             </div>
+
+             <!-- Number of guests -->
+             <div class="form-group">
+                <label for="guests">Guests:</label>
+                <select id="guests" name="guests" required>
+                    <option value="">Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                </select>
+             </div>   
 
                 <!-- Submit button -->
                  <button type="submit">Search Available</button>
