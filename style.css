@@ -465,13 +465,19 @@ section img{
 }
 
 .booking-card{
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     border: 1px solid #000;
-    border-radius: 10px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
-    width: 400px;
+    width: 500px;
+    height: 200px;
     box-shadow: 0 4px 12px #000;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .booking-card h2{
@@ -481,13 +487,13 @@ section img{
 }
 
 .booking-form .form-group{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     text-align: left;
 }
 
 .booking-form label{
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 14px;
     color: #333;
 }
@@ -496,7 +502,8 @@ section img{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font: 14px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .booking-form button{
