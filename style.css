@@ -30,8 +30,8 @@ nav ul li a:hover{
 /* Header section  */
 .hero{
     position: relative;
-    height: 500px;
-    background-image: url(https://images.unsplash.com/photo-1534825696654-39efb2c8453d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    height: 350px;
+    background-image: url(https://images.unsplash.com/photo-1621293954908-907159247fc8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVjZXB0aW9ufGVufDB8fDB8fHww);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@ nav ul li a:hover{
 header h2{
     font-size: 32px;
     font-weight: 600;
-    color: aliceblue;
+    color: rgb(252, 248, 248);
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -238,6 +238,7 @@ footer .copyright{
     flex: 1;
     padding: 20px;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 0%;
 }
 
 .about-text p{
@@ -250,19 +251,19 @@ footer .copyright{
 .about-header{
     display: flex;
     font-size: 28px;
-    margin-bottom: 20px;
-    color: #000;
+    margin-bottom: 0px;
+    color: #fffefe;
     font-weight: 700;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    background-image: url();
+    height: 300px;
+    background-image: url(https://images.unsplash.com/photo-1565262353342-6e919eab5b58?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlY2VwdGlvbnxlbnwwfHwwfHx8MA%3D%3D);
     margin-top: 0px;
 }
 
 header h1{
     font-size: 36px;
-    color: rgb(5, 5, 5);
+    color: rgb(247, 244, 244);
     font-family: 'Times New Roman', Times, serif;
     justify-content: center;
     text-align: center;
@@ -272,14 +273,17 @@ header h1{
 
 /* SERVICES */
 .services-header{
-    background-image: url();
+    background-image: url(https://images.unsplash.com/photo-1663147475798-7e672b522463?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGhvdGVsJTIwc2VydmljZXN8ZW58MHx8MHx8fDA%3D);
     color: white;
     text-align: center;
     padding: 80px 20px;
+    margin-bottom: 15px;
+    height: 200px;
 }
 
 .services-header h1{
     font-size: 48px;
+    color: white;
     margin: 0px;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
@@ -301,15 +305,16 @@ main{
     padding: 40px;
     margin-bottom: 60px;
     margin-right: 5px;
+    justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 500px;
 }
 
 /* Section Headings */
 #rooftop h2, #food h2{
     font-size: 28px;
     margin-bottom: 20px;
-    color: #000;
+    color: #030303;
     padding-bottom: 8px;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -443,14 +448,14 @@ section img{
 
 .rooms-header{
     display: flex;
-    font-size: 28px;
     margin-bottom: 20px;
-    color: #000;
+    font-size: 28px;
     font-weight: 700;
+    color: #fff;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    background-image: url();
+    height: 300px;
+    background-image: url(https://images.unsplash.com/photo-1630660664869-c9d3cc676880?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjBiZWR8ZW58MHx8MHx8fDA%3D);
     margin-top: 0px;
 }
 
@@ -461,7 +466,7 @@ section img{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
 }
 
 .booking-card{
@@ -529,13 +534,13 @@ section img{
 .book-header{
     display: flex;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     color: #000;
     font-weight: 700;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    background-image: url();
+    height: 350px;
+    background-image: url(https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBiZWR8ZW58MHx8MHx8fDA%3D);
     margin-top: 0px;
 }
 
@@ -546,7 +551,6 @@ section img{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url();
     padding: 40px;
     margin-bottom: 10px;
 }
@@ -623,4 +627,17 @@ section img{
 .contact-form button:hover{
     background-color: gray;
     transform: translateY(-2px);
+}
+
+.contact-header{
+    display: flex;
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    background-image: url(https://images.unsplash.com/photo-1664093674943-aa7696a14209?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG91dHNpZGUlMjBjaGlsbGluZyUyMHNwb3R8ZW58MHx8MHx8fDA%3D);
+    margin-top: 0px;
 }
