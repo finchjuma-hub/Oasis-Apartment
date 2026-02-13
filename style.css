@@ -268,3 +268,20 @@ header h1{
     text-align: center;
     margin-bottom: 0px;
 }
+
+/* SERVICES */
+.services-header{
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.services-header h1{
+    font-size: 48px;
+    margin: 0px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}
+
