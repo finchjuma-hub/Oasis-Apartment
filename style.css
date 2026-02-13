@@ -292,7 +292,7 @@ main{
     padding: 0px
 }
 
-section{
+#rooftop, #food{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -305,7 +305,7 @@ section{
 }
 
 /* Section Headings */
-section h2{
+#rooftop h2, #food h2{
     font-size: 28px;
     margin-bottom: 20px;
     color: #000;
