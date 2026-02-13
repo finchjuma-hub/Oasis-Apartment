@@ -45,9 +45,24 @@ header h2{
 
 /* Intro section */
 #intro{
-    max-width: 100%;
+    max-width: 80%;
     margin: 80px auto;
     text-align: center;
     padding: 40px;
     background-color: white;
+}
+
+/* Button */
+#intro .button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#intro .button:hover{
+    background-color: gray;
 }
