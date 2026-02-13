@@ -271,7 +271,7 @@ header h1{
 
 /* SERVICES */
 .services-header{
-    background-color: royalblue;
+    background-image: url();
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -288,20 +288,20 @@ header h1{
 /* Content */
 main{
     max-width: 1200px;
-    margin: 60px auto;
-    padding: 0px
+    margin: 0px auto;
+    padding: 0px;
 }
 
 #rooftop, #food{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    background-color: rosybrown;
+    background-color: rgb(247, 244, 239);
     padding: 40px;
     margin-bottom: 60px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px #000;
+    margin-right: 5px;
     align-items: center;
+    height: 300px;
 }
 
 /* Section Headings */
@@ -309,7 +309,6 @@ main{
     font-size: 28px;
     margin-bottom: 20px;
     color: #000;
-    border-bottom: 2px solid #000;
     padding-bottom: 8px;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -328,5 +327,33 @@ section img{
     object-fit: cover;
     border-radius: 8px;
 }  
+
+.facilities{
+    background-image: url();
+}
+
+/* List */
+.facility-list{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.facility-list li{
+    margin-bottom: 12px;
+    font: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    padding-left: 28px;
+}
+
+.facility-list li::before{
+    content: "✔"; 
+    color: rgb(14, 15, 15);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}   
+
 
 
