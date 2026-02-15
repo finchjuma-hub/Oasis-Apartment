@@ -101,7 +101,6 @@ function cancelBooking(roomId) {
         }
         return room;
     });
-    }
 
     localStorage.setItem("rooms", JSON.stringify(rooms));
     alert("Booking cancelled.");
@@ -115,3 +114,6 @@ document.getElementById("reset-btn").addEventListener("click", () => {
     localStorage.removeItem("rooms");
     location.reload();
 });
+
+// Initial display
+displayRooms();
