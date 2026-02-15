@@ -30,3 +30,10 @@ searchInfo.innerHTML = `
     <p><Strong>Guests:</Strong> ${searchData.guests}</p>
 `;
 
+// Display room status
+function isRoomAvailable(room) {
+    return !room.bookings.some(b => 
+        !(searchData.checkOut <= b.checkIn ||
+            searchData.checkIn >= b.checkOut)
+    );
+}
