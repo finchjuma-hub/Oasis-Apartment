@@ -82,3 +82,10 @@ function bookRoom(roomId) {
         }
         return room;
     });
+
+    // Save updated rooms
+    localStorage.setItem("rooms", JSON.stringify(rooms));
+
+    alert("Room booked successfully!");
+    displayRooms();
+}
