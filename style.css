@@ -642,53 +642,10 @@ section img{
     margin-top: 0px;
 }
 
+
 /* ROOMSTATUS PAGE */
-.status-header{
-    text-align: center;
-    padding: 20px;
-}
-
-.room-status{
-    max-width: 600px;
-    margin: 0px auto;
-    padding: 20px;
-}
-
-.room-status h2{
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.room-status p{
-    font-size: 16px;
-}
-
-.available{
-    color: green;
-    font-weight: bold;
-}
-
-.booked{
-    color: red;
-    font-weight: bold;
-}
-
-.booking-link{
-    text-align: center;
-    margin-top: 30px;
-}
-
-.booking-link .button{
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-}
-
-.booking-link .button:hover{
-    background-color: gray;
-    transform: translateY(-2px);
+.task-list contaier{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
