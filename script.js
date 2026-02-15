@@ -37,3 +37,33 @@ function isRoomAvailable(room) {
             searchData.checkIn >= b.checkOut)
     );
 }
+
+// Show rooms
+function displayRooms() {
+    roomStatusContainer.innerHTML = "";
+
+    rooms.forEach(room => {
+        const available = isRoomAvailable(room);
+
+        const div = document.createElement('div');
+        div.className = "room-card";
+
+        div.innerHTML = `
+            <h3>${room.name}</h3>
+            <p>Status: <strong>${available ? "Available" : "Booked"}</strong></p>
+            ${
+                available
+                ? `<button onclick="bookRoom(${room.id})">Book Now</button>`
+                : `<button disabled>Unavailable</button>`
+            }
+            ${
+                room.bookings.length
+                  ? `<button onclick="cancelBooking(${room.id})"Cancel Booking</button>`
+                    : ""
+            }
+        `;
+
+        roomStatusContainer.appendChild(div);
+    });
+}
+        
