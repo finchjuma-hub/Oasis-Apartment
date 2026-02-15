@@ -89,3 +89,21 @@ function bookRoom(roomId) {
     alert("Room booked successfully!");
     displayRooms();
 }
+
+// Cancelling Booking
+function cancelBooking(roomId) {
+
+    if (!confirm("Cancel this booking?")) return;
+
+    rooms = rooms.map(room => {
+        if (room.id === roomId) {
+            room.bookings = [];
+        }
+        return room;
+    });
+    }
+
+    localStorage.setItem("rooms", JSON.stringify(rooms));
+    alert("Booking cancelled.");
+    displayRooms();
+}
