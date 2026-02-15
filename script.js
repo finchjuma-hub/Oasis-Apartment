@@ -10,8 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const checkOut = document.getElementById("check-out").value;
         const guests = document.getElementById("guests").value;
 
+        // Log in info
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
         // Validate
-        if (!checkIn || !checkOut || !guests) {
+        if (!checkIn || !checkOut || !guests || !username || !password) {
             alert("Please fill in all fields.");
             return;
         }
