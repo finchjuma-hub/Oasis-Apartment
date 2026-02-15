@@ -23,3 +23,10 @@ let rooms = JSON.parse(localStorage.getItem('rooms'));
 const roomStatusContainer = document.getElementById('room-status-container');
 const searchInfo = document.getElementById('search-info');
 
+// Booking Details
+searchInfo.innerHTML = `
+    <p><Strong>Check-in:</Strong> ${searchData.checkIn}</p>
+    <p><Strong>Check-out:</Strong> ${searchData.checkOut}</p>
+    <p><Strong>Guests:</Strong> ${searchData.guests}</p>
+`;
+
