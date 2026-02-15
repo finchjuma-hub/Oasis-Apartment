@@ -19,3 +19,7 @@ if (!localStorage.getItem('rooms')) {
 // Load stored room data
 let rooms = JSON.parse(localStorage.getItem('rooms'));
 
+// Get HTML containers
+const roomStatusContainer = document.getElementById('room-status-container');
+const searchInfo = document.getElementById('search-info');
+
