@@ -15,3 +15,7 @@ if (!localStorage.getItem('rooms')) {
     ];
     localStorage.setItem('rooms', JSON.stringify(rooms));
 }
+
+// Load stored room data
+let rooms = JSON.parse(localStorage.getItem('rooms'));
+
