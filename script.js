@@ -66,4 +66,19 @@ function displayRooms() {
         roomStatusContainer.appendChild(div);
     });
 }
-        
+
+
+// Room Booking
+function bookRoom(roomId) {
+
+    // Add new booking
+    rooms = rooms.map(room => {
+        if (room.id === roomId) {
+            room.bookings.push({
+                checkIn: searchData.checkIn,
+                checkOut: searchData.checkOut,
+                guests: searchData.guests
+            });
+        }
+        return room;
+    });
