@@ -107,3 +107,11 @@ function cancelBooking(roomId) {
     alert("Booking cancelled.");
     displayRooms();
 }
+
+// Reset
+document.getElementById("reset-btn").addEventListener("click", () => {
+    if (!confirm("Reset all bookings? This cannot be undone.")) return;
+
+    localStorage.removeItem("rooms");
+    location.reload();
+});
