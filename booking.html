@@ -54,11 +54,29 @@
                     <option value="3">3 Guests</option>
                     <option value="4">4 Guests</option>
                 </select> 
-             </div>    
+             </div>  
+             
+             <!-- login info -->
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+              </div>
+
+                <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                </div>
 
                 <!-- Submit button -->
                  <button type="submit">Search Available</button>
             </form>
+        </section>
+
+        <section clas="booking-section" id="available-rooms-section" style="display:none;">
+            <div class="booking-card">
+                <h2>Available Rooms</h2>
+                <div id="rooms-container"></div>
+            </div>
         </section>
     </main>
 
