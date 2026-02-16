@@ -64,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function (){
                         ${b.checkIn} - ${b.checkOut}
                         (by ${b.username})
                         ${b.username === userData.username
-                            ? `button onclick="cancelBooking(${room.id}, ${index})">Cancel</button>`
+                            ? `<button onclick="cancelBooking(${room.id}, ${index})">Cancel</button>`
                             : ""}
                         </p>`
-                    `;`    
+                    `;    
                 });
             }
 
@@ -111,4 +111,21 @@ document.addEventListener("DOMContentLoaded", function (){
          displayRooms();
         };
         
-        
+        // Cancel booking
+        window.cancelBooking = function (roomId, bookingIndex) {
+            const room = rooms.find(r => r.id === roomId);
+
+            if(room.bookings[bookingIndex].username !== userData.username){
+                alert("You can only cancel your own booking.");
+                return;
+            }
+
+            room.bookings.splice(bookingIndex, 1);
+
+            localStorage.setItem("rooms", JSON.stringify(rooms));
+            alert("Booking cancelled succesfully.");
+            displayRooms();
+        };
+
+        displayRooms();
+ });
