@@ -30,3 +30,16 @@ document.addEventListener("DOMContentLoaded", function (){
             Guests: ${userData.guests}
         `;
     }
+
+    // Room Availability
+    function isRoomAvailable(room){
+        return !room.bookings.some(b => {
+            const bookedIn = new Date(b.checkIn);
+            const bookedOut = new Date(b.checkOut);
+            const searchIn = new Date(userData.checkIn);
+            const searchOut = new Date(userData.checkOut);
+
+            return (searchIn < bookedOut && searchOut > bookedIn);
+        });
+    }
+
