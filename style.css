@@ -466,11 +466,11 @@ section img{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin-bottom: 1px;
+    margin-bottom: 20px;
 }
 
 .booking-card{
-    background-color: #fff;
+    background-color: antiquewhite;
     border-radius: 12px;
     padding: 30px;
     width: 380px;
