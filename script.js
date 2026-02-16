@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function (){
     // Initialize rooms
     if (!localStorage.getItem("rooms")){
         const rooms = [
-            {id: 1, name: "Two Bedroom Apartment", bookings:[], },
-            {id: 2, name: "One Bedroom Apartment", bookings:[], },
-            {id: 3, name: "Studio Apartment", bookings:[], },
+            {id: 1, name: "Two Bedroom Apartment", bookings:[] },
+            {id: 2, name: "One Bedroom Apartment", bookings:[] },
+            {id: 3, name: "Studio Apartment", bookings:[] }
         ];
         localStorage.setItem("rooms", JSON.stringify(rooms));
     }
@@ -45,42 +45,55 @@ document.addEventListener("DOMContentLoaded", function (){
 
     // Display rooms
     function displayRooms(){
-        const container = document.getElementById("room-container");
+        const container = document.getElementById("rooms-container");
         container.innerHTML = "";
-
-        let availableCount = 0;
 
         rooms.forEach(room => {
             const available = isRoomAvailable(room);
-            if(available) availableCount++;
 
-            const div = document.createElement("div");
+            const div =  document.createElement("div");
             div.className = "room-card";
+
+            // All existing bookings
+            let bookingHistory = "";
+            if (room.bookings.length > 0){
+                bookingHistory = "<p><strong>Booked Dates:</strong></p>";
+                room.bookings.forEach((b, index) => {
+                    bookingHistory += `
+                        <p>
+                        ${b.checkIn} - ${b.checkOut}
+                        (by ${b.username})
+                        ${b.username === userData.username
+                            ? `button onclick="cancelBooking(${room.id}, ${index})">Cancel</button>`
+                            : ""}
+                        </p>`
+                    `;`    
+                });
+            }
 
             div.innerHTML = `
                 <h3>${room.name}</h3>
                 <p>Status:
-                     <strong class="${available ? 'available' : 'booked'}">
-                     ${available ? "Available" : "Booked"}
-                     </strong>
+                    <strong class="${available ? 'available' : 'booked'}">
+                        ${available ? "Available" : "NOt Available"}
+                        </strong>
                 </p>
                 ${available
-                    ? `<button onclick="bookRoom(${room.id})">Book Now</button>`
-                    : `<button disabled>Unavailable</button>`}
+                    ? `<button onclick="bookRoom(${room.id})">Book Now</button>
+                    : ""}
+                    ${bookingHistory}
             `;
 
             container.appendChild(div);
         });
-        if (availableCount === 0){
-            container.innerHTML = "<p>NO rooms available for selected dates.</p>";
-        }
     }
+         
 
     // Book room
     window.bookRoom = function (roomId) {
 
         rooms=rooms.map(room => {
-            if (rooom.id === roomId){
+            if (room.id === roomId){
                 room.bookings.push({
                     checkIn: userData.checkIn,
                     checkOut: userData.checkOut,
@@ -92,7 +105,8 @@ document.addEventListener("DOMContentLoaded", function (){
         });
 
         localStorage.setItem("rooms", JSON.stringify(rooms));
-        displayRooms("Room booked successfully!");
+        alert("Room booked successfully!");
+        displayRooms();
     };
 
     displayRooms();
