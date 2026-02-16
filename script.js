@@ -75,3 +75,25 @@ document.addEventListener("DOMContentLoaded", function (){
             container.innerHTML = "<p>NO rooms available for selected dates.</p>";
         }
     }
+
+    // Book room
+    window.bookRoom = function (roomId) {
+
+        rooms=rooms.map(room => {
+            if (rooom.id === roomId){
+                room.bookings.push({
+                    checkIn: userData.checkIn,
+                    checkOut: userData.checkOut,
+                    guests: userData.guests,
+                    username: userData.username,
+                });    
+            }
+            return room;
+        });
+
+        localStorage.setItem("rooms", JSON.stringify(rooms));
+        displayRooms("Room booked successfully!");
+    };
+
+    displayRooms();
+});
