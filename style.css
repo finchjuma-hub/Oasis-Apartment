@@ -23,8 +23,9 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color: #007BFF;
-    border-bottom: 2px solid #007BFF;
+    color: gold;
+    border: 2px solid gold;
+    border-radius: 4px;
 }
 
 /* Header section  */
