@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function (){
     }
     let rooms = JSON.parse(localStorage.getItem("rooms"));
 
+    // USER INFO
+    const userInfo = document.getElementById("user-info");
 
-
-    
+    if(userInfo){
+        userInfo.innerHTML = `
+            Username: <strong>${userData.username}</strong><br>
+            Check-in: ${userData.checkIn}<br>
+            Check-out: ${userData.checkOut}<br>
+            Guests: ${userData.guests}
+        `;
+    }
