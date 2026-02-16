@@ -467,6 +467,8 @@ section img{
     align-items: center;
     min-height: 100vh;
     margin-bottom: 20px;
+    margin-top: 0px;
+    
 }
 
 .booking-card{
