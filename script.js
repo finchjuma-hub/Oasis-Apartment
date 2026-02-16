@@ -92,22 +92,23 @@ document.addEventListener("DOMContentLoaded", function (){
     // Book room
     window.bookRoom = function (roomId) {
 
-        rooms=rooms.map(room => {
-            if (room.id === roomId){
-                room.bookings.push({
-                    checkIn: userData.checkIn,
-                    checkOut: userData.checkOut,
-                    guests: userData.guests,
-                    username: userData.username,
-                });    
-            }
-            return room;
-        });
+         const room = rooms.find(r => r.id === roomId);
 
-        localStorage.setItem("rooms", JSON.stringify(rooms));
-        alert("Room booked successfully!");
-        displayRooms();
-    };
+         if (!isRoomAvailable(room)) {
+            alert("This rooms is no longer available.");
+            return;
+         } 
 
-    displayRooms();
-});
+         room.bookings.push({
+            checkIn: userData.checkIn,
+            checkOut: userData.checkOut,
+            guests: userData.guests,
+            username: userData.username            
+         });
+
+         localStorage.setItem("rooms", JSON.stringify(rooms));
+         alert("Room Booked successfully!");
+         displayRooms();
+        };
+        
+        
