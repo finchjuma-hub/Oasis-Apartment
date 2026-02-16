@@ -63,3 +63,10 @@ Rooms are checked for availability based on dates
 If available, the room can be booked
 Bookings are displayed on the Room Status page
 Users can cancel only their own bookings
+
+## Future Improvements
+Add backend
+Add user authentication
+Improve date validation
+Admin dashboard
+Email configuration for bookings
