@@ -11,3 +11,41 @@ booking history per room
 User booking details display
 Persistent data storage using localStorage
 Responsive layout 
+
+## Pages Overview
+# Home page(INdex.html)
+Landing page with a welcome message
+Quick links to rooms and about page
+
+# About Us(about.html)
+Background story of Oasis Apartments
+Contact information sidebar
+
+# Services(services.html)
+Information about facilities and services
+Images and descriptions
+
+# Rooms(rooms.html)
+Displays available room types
+Feeling and design of different rooms
+
+# Booking Page(booking.html)
+Users enter:
+      Check-in date
+      Check-out date
+      Number of guests
+      Username
+Booking details are saved in localStorage
+
+# Room Status Page(roomstatus.html)
+Displays:
+      User booking details
+      Available and unavailable rooms
+      Booking history
+Allows users to:      
+      Book rooms
+      Cancel their own bookings only
+
+# Contact Page(contact.html)
+Contact information
+Contact form (non-functional, for design practice)      
