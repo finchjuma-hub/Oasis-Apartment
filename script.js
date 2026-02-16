@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function (){
                         ${b.username === userData.username
                             ? `<button onclick="cancelBooking(${room.id}, ${index})">Cancel</button>`
                             : ""}
-                        </p>`
+                        </p>
                     `;    
                 });
             }
@@ -75,11 +75,11 @@ document.addEventListener("DOMContentLoaded", function (){
                 <h3>${room.name}</h3>
                 <p>Status:
                     <strong class="${available ? 'available' : 'booked'}">
-                        ${available ? "Available" : "NOt Available"}
+                        ${available ? "Available" : "Not Available"}
                         </strong>
                 </p>
                 ${available
-                    ? `<button onclick="bookRoom(${room.id})">Book Now</button>
+                    ? `<button onclick="bookRoom(${room.id})">Book Now</button>`
                     : ""}
                     ${bookingHistory}
             `;
