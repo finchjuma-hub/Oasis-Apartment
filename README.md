@@ -49,3 +49,10 @@ Allows users to:
 # Contact Page(contact.html)
 Contact information
 Contact form (non-functional, for design practice)      
+
+## Technologies Used
+HTML - Website structure
+CSS - Styling and layout
+JavaScript - Interactivity and logic
+Local Storage - Data storage in the browser
+
