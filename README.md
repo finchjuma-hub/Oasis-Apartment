@@ -64,6 +64,12 @@ If available, the room can be booked
 Bookings are displayed on the Room Status page
 Users can cancel only their own bookings
 
+## Limitations
+No backend or database
+Data is cleared when browser storage is cleared
+No log in authenitcation system
+Contact form does not send real messages
+
 ## Future Improvements
 Add backend
 Add user authentication
