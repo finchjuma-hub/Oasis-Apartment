@@ -56,3 +56,10 @@ CSS - Styling and layout
 JavaScript - Interactivity and logic
 Local Storage - Data storage in the browser
 
+## How the Booking System works
+User fills the booking form
+Booking data is stored in local Storage
+Rooms are checked for availability based on dates
+If available, the room can be booked
+Bookings are displayed on the Room Status page
+Users can cancel only their own bookinga
