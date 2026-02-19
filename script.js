@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* -------------------------
-       BOOKING PAGE LOGIC
-    --------------------------*/
+    //  BOOKING PAGE LOGIC
 
     const bookingForm = document.getElementById("booking-form");
 
@@ -31,14 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* -------------------------
-       ROOM STATUS PAGE LOGIC
-    --------------------------*/
+    //  ROOM STATUS PAGE LOGIC
 
     const roomsContainer = document.getElementById("rooms-container");
     const userInfo = document.getElementById("user-info");
 
-    if (!roomsContainer || !userInfo) return;
+    // 🚨 IMPORTANT: do NOT return the whole script
+    if (!roomsContainer || !userInfo) {
+        return; // only exits room-status logic, booking still works
+    }
 
     const userData = JSON.parse(localStorage.getItem("userData"));
 
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Initialize rooms if not exists
+    // Initialize rooms
     if (!localStorage.getItem("rooms")) {
         localStorage.setItem("rooms", JSON.stringify([
             { id: 1, name: "Single Room", bookings: [] },
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let rooms = JSON.parse(localStorage.getItem("rooms"));
 
-    // Show user details
+    // Show user info
     userInfo.innerHTML = `
         <strong>${userData.username}</strong><br>
         Check-in: ${userData.checkIn}<br>
@@ -120,4 +119,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     displayRooms();
 });
-
+``
