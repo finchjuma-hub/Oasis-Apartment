@@ -1,122 +1,136 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    //  BOOKING PAGE LOGIC
+//   ROOMS
 
-    const bookingForm = document.getElementById("booking-form");
+  const ROOM_LIST = [
+    { id: 1, name: "Single Room", maxGuests: 1 },
+    { id: 2, name: "Double Room", maxGuests: 2 },
+    { id: 3, name: "Deluxe Room", maxGuests: 2 },
+    { id: 4, name: "Family Room", maxGuests: 5 }
+  ];
+// ROOMS STORAGE
 
-    if (bookingForm) {
-        bookingForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+  if (!localStorage.getItem("rooms")) {
+    const roomsWithBookings = ROOM_LIST.map(room => ({
+      ...room,
+      bookings: []
+    }));
+    localStorage.setItem("rooms", JSON.stringify(roomsWithBookings));
+  }
 
-            const username = document.getElementById("username").value;
-            const checkIn = document.getElementById("checkin").value;
-            const checkOut = document.getElementById("checkout").value;
-            const guests = document.getElementById("guests").value;
+//   BOOKING PAGE LOGIC
 
-            if (!username || !checkIn || !checkOut || !guests) {
-                alert("Please fill in all fields.");
-                return;
-            }
+  const bookingForm = document.getElementById("booking-form");
 
-            localStorage.setItem("userData", JSON.stringify({
-                username,
-                checkIn,
-                checkOut,
-                guests
-            }));
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            window.location.href = "roomstatus.html";
-        });
-    }
+      const username = document.getElementById("username").value;
+      const checkIn = document.getElementById("check-in").value;
+      const checkOut = document.getElementById("check-out").value;
+      const guests = document.getElementById("guests").value;
 
-    //  ROOM STATUS PAGE LOGIC
-
-    const roomsContainer = document.getElementById("rooms-container");
-    const userInfo = document.getElementById("user-info");
-
-    // 🚨 IMPORTANT: do NOT return the whole script
-    if (!roomsContainer || !userInfo) {
-        return; // only exits room-status logic, booking still works
-    }
-
-    const userData = JSON.parse(localStorage.getItem("userData"));
-
-    if (!userData) {
-        alert("Please search for a room first.");
-        window.location.href = "booking.html";
+      if (!username || !checkIn || !checkOut || !guests) {
+        alert("Please fill in all fields.");
         return;
-    }
+      }
 
-    // Initialize rooms
-    if (!localStorage.getItem("rooms")) {
-        localStorage.setItem("rooms", JSON.stringify([
-            { id: 1, name: "Single Room", bookings: [] },
-            { id: 2, name: "Double Room", bookings: [] },
-            { id: 3, name: "Deluxe Room", bookings: [] },
-            { id: 4, name: "Family Room", bookings: [] }
-        ]));
-    }
+      localStorage.setItem("userData", JSON.stringify({
+        username,
+        checkIn,
+        checkOut,
+        guests
+      }));
 
-    let rooms = JSON.parse(localStorage.getItem("rooms"));
+      window.location.href = "roomstatus.html";
+    });
 
-    // Show user info
+    return; 
+  }
+
+//   ROOM STATUS PAGE LOGIC
+
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const rooms = JSON.parse(localStorage.getItem("rooms"));
+  const userInfo = document.getElementById("user-info");
+  const roomsContainer = document.getElementById("rooms-container");
+
+  // Prevent direct access without booking
+  if (!userData) {
+    alert("Please search for a room first.");
+    window.location.href = "booking.html";
+    return;
+  }
+
+//    USER INFO
+
+  if (userInfo) {
     userInfo.innerHTML = `
-        <strong>${userData.username}</strong><br>
-        Check-in: ${userData.checkIn}<br>
-        Check-out: ${userData.checkOut}<br>
-        Guests: ${userData.guests}<br><br>
-        <button id="clear-booking">Start New Booking</button>
-        <hr>
+      <strong>Name:</strong> ${userData.username}<br>
+      <strong>Check-in:</strong> ${userData.checkIn}<br>
+      <strong>Check-out:</strong> ${userData.checkOut}<br>
+      <strong>Guests:</strong> ${userData.guests}<br><br>
+      <button id="new-booking">Start New Booking</button>
+      <hr>
+    `;
+  }
+
+  document.addEventListener("click", function (e) {
+    if (e.target.id === "new-booking") {
+      localStorage.removeItem("userData");
+      window.location.href = "booking.html";
+    }
+  });
+
+//   ROOM AVAILABILITY
+
+  function isRoomAvailable(room) {
+    return !room.bookings.some(b => {
+      const bookedIn = new Date(b.checkIn);
+      const bookedOut = new Date(b.checkOut);
+      const searchIn = new Date(userData.checkIn);
+      const searchOut = new Date(userData.checkOut);
+      return searchIn < bookedOut && searchOut > bookedIn;
+    });
+  }
+
+//   DISPLAY ROOMS
+
+  roomsContainer.innerHTML = "";
+
+  rooms.forEach(room => {
+    const available = isRoomAvailable(room);
+    const div = document.createElement("div");
+    div.className = "room-card";
+
+    div.innerHTML = `
+      <h3>${room.name}</h3>
+      <p>Max guests: ${room.maxGuests}</p>
+      <p>Status: <strong>${available ? "Available" : "Not Available"}</strong></p>
+      ${available ? `<button onclick="bookRoom(${room.id})">Book Now</button>` : ""}
     `;
 
-    document.getElementById("clear-booking").onclick = function () {
-        localStorage.removeItem("userData");
-        window.location.href = "booking.html";
-    };
+    roomsContainer.appendChild(div);
+  });
 
-    function isRoomAvailable(room) {
-        return !room.bookings.some(b =>
-            new Date(userData.checkIn) < new Date(b.checkOut) &&
-            new Date(userData.checkOut) > new Date(b.checkIn)
-        );
-    }
+//    BOOK ROOM
 
-    function displayRooms() {
-        roomsContainer.innerHTML = "";
+  window.bookRoom = function (roomId) {
+    const rooms = JSON.parse(localStorage.getItem("rooms"));
+    const room = rooms.find(r => r.id === roomId);
 
-        rooms.forEach(room => {
-            const available = isRoomAvailable(room);
+    room.bookings.push({
+      username: userData.username,
+      checkIn: userData.checkIn,
+      checkOut: userData.checkOut
+    });
 
-            const div = document.createElement("div");
-            div.className = "room-card";
+    localStorage.setItem("rooms", JSON.stringify(rooms));
+    localStorage.removeItem("userData");
 
-            div.innerHTML = `
-                <h3>${room.name}</h3>
-                <p>Status: <strong>${available ? "Available" : "Not Available"}</strong></p>
-                ${available ? `<button onclick="bookRoom(${room.id})">Book Now</button>` : ""}
-            `;
+    alert("Room booked successfully!");
+    window.location.href = "booking.html";
+  };
 
-            roomsContainer.appendChild(div);
-        });
-    }
-
-    window.bookRoom = function (roomId) {
-        const room = rooms.find(r => r.id === roomId);
-
-        if (!isRoomAvailable(room)) {
-            alert("Room no longer available.");
-            return;
-        }
-
-        room.bookings.push({ ...userData });
-
-        localStorage.setItem("rooms", JSON.stringify(rooms));
-        localStorage.removeItem("userData");
-
-        alert("Room booked successfully!");
-        window.location.href = "booking.html";
-    };
-
-    displayRooms();
 });
-``
